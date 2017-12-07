@@ -9,21 +9,16 @@
 #import "ViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
-
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-                                                  forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.view.backgroundColor = [UIColor clearColor];
-    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
-    self.navigationController.hidesBarsOnSwipe = YES;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -42,11 +37,14 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y < 0) {
-        self.navigationController.hidesBarsOnSwipe = NO;
+    if (scrollView.contentOffset.y <= 0) {
         [self.navigationController setNavigationBarHidden:NO animated: YES];
     } else {
-        self.navigationController.hidesBarsOnSwipe = YES;
+        [self.navigationController setNavigationBarHidden:YES animated: YES];
     }
+    [UIView animateWithDuration:[CATransaction animationDuration]
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                     }];
 }
 @end
