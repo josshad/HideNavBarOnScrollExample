@@ -431,8 +431,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P3Y2V546J7;
+				DEVELOPMENT_TEAM = CE6985U2L5;
 				INFOPLIST_FILE = HideNavBarOnScrollExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.josshad.HideNavBarOnScrollExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -445,8 +446,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P3Y2V546J7;
+				DEVELOPMENT_TEAM = CE6985U2L5;
 				INFOPLIST_FILE = HideNavBarOnScrollExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.josshad.HideNavBarOnScrollExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";

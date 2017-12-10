@@ -9,16 +9,54 @@
 #import "ViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic) UITableView *tableView;
+@property (nonatomic) UIView *headerView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    self.headerView = ({
+        UIView *view = [UIView new];
+        view.backgroundColor = UIColor.blueColor;
+        [self.view addSubview:view];
+        view;
+    });
+    
+    self.tableView = ({
+        UITableView *tV = [UITableView new];
+        tV.delegate = self;
+        tV.dataSource = self;
+        [self.view addSubview:tV];
+        tV;
+    });
+    
+    
+    
+    self.headerView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
+        [NSLayoutConstraint activateConstraints:@[
+                                                  [self.headerView.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:0],
+                                                  [self.headerView.bottomAnchor constraintEqualToAnchor:guide.topAnchor constant:64],
+                                                  [self.headerView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:0],
+                                                  [self.headerView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:0]
+                                                  ]];
+        [NSLayoutConstraint activateConstraints:@[
+                                                  [self.tableView.topAnchor constraintEqualToAnchor:self.headerView.bottomAnchor constant:0],
+                                                  [self.tableView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:0],
+                                                  [self.tableView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:0],
+                                                  [self.tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:0]
+                                                  ]];
+       
+        
     }
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

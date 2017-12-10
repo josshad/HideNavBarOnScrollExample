@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VhY-Hn-EgE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VhY-Hn-EgE">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,53 +34,10 @@
                     <view key="view" contentMode="scaleToFill" id="Diz-6C-vuE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvw-c0-54s">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Q5-45-c6i">
-                                        <rect key="frame" x="0.0" y="111" width="375" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="byJ-1F-yss"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.37254901959999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="8Q5-45-c6i" secondAttribute="trailing" id="DpY-Yj-2VG"/>
-                                    <constraint firstItem="8Q5-45-c6i" firstAttribute="leading" secondItem="bvw-c0-54s" secondAttribute="leading" id="LW7-Cz-Ian"/>
-                                    <constraint firstAttribute="bottom" secondItem="8Q5-45-c6i" secondAttribute="bottom" constant="20" id="hsl-65-MA9"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5CP-eR-LCs">
-                                <rect key="frame" x="0.0" y="152" width="375" height="626"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="1qM-fc-YW2" id="dd6-Mr-JxN"/>
-                                    <outlet property="delegate" destination="1qM-fc-YW2" id="Yg0-tD-BRF"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="bvw-c0-54s" firstAttribute="top" secondItem="Diz-6C-vuE" secondAttribute="top" id="QBc-6g-q5R"/>
-                            <constraint firstItem="5CP-eR-LCs" firstAttribute="top" secondItem="bvw-c0-54s" secondAttribute="bottom" id="YNu-uj-orU"/>
-                            <constraint firstItem="5CP-eR-LCs" firstAttribute="trailing" secondItem="wP6-hQ-LYr" secondAttribute="trailing" id="YaY-K6-QiD"/>
-                            <constraint firstItem="bvw-c0-54s" firstAttribute="leading" secondItem="wP6-hQ-LYr" secondAttribute="leading" id="ekS-Qq-N94"/>
-                            <constraint firstItem="wP6-hQ-LYr" firstAttribute="trailing" secondItem="bvw-c0-54s" secondAttribute="trailing" id="pl2-iF-rVq"/>
-                            <constraint firstItem="wP6-hQ-LYr" firstAttribute="top" secondItem="bvw-c0-54s" secondAttribute="bottom" constant="-64" id="v5V-Ck-g48"/>
-                            <constraint firstItem="5CP-eR-LCs" firstAttribute="leading" secondItem="wP6-hQ-LYr" secondAttribute="leading" id="w5C-tw-cwc"/>
-                            <constraint firstItem="5CP-eR-LCs" firstAttribute="bottom" secondItem="wP6-hQ-LYr" secondAttribute="bottom" id="wAg-DU-Lnz"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wP6-hQ-LYr"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="ZOi-Fz-gcj"/>
-                    <connections>
-                        <outlet property="tableView" destination="5CP-eR-LCs" id="0gu-tk-6fl"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngr-2R-kC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
